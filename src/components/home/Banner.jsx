@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 const Banner = () => {
   return (
     <div>
-      <section className="w-full min-h-[100vh] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 lg:px-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="py-6 w-full min-h-[100vh] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 lg:px-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
         {/* Left Side - Typewriter */}
         <div className="flex-1 text-center md:text-left space-y-6">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
