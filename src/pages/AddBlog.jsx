@@ -66,17 +66,19 @@ const AddBlog = () => {
         duration: 0.6,
         scale: { type: "spring", visualDuration: 0.6, bounce: 0.5 },
       }}
-      sx={{ width: { lg: 2 / 3 }, mx: { lg: "auto", md: "auto", xs: 8 }, py: { lg: 10, md: 10, xs: 4 } }}
+      sx={{ width: { lg: 2 / 3 }, mx: { lg: "auto", md: "auto", xs: 2 }, py: { lg: 10, md: 10, xs: 4 } }}
     >
-      <Typography py={3} variant="h5">
+      <Typography py={3} variant="h5" textAlign={"center"}>
         Add Blog Page
       </Typography>
-     <Box border={1} borderColor={"gray"} padding={10}>
-       <form onSubmit={handleFormSubmit}>
-        <TextField sx={{ mx: 1, my: 2 }} required name="title" label="Title" variant="outlined" />
+       <Box sx={{border:1,borderColor:"gray",p:{lg:10,md:10,sm:10,xs:4},mx:"auto",
+       width:{lg:2/3,md:2/3,sm:"fullWidth",xs:280}}}>
+       <form onSubmit={handleFormSubmit}
+        className="xs:w-full mx-auto">
+        <TextField sx={{ mx: 1, my: 2}} required name="title" label="Title" variant="outlined" />
         <TextField sx={{ mx: 1, my: 2 }} name="email" defaultValue={user?.email} type="email" label="Email" variant="outlined" />
         <TextField fullWidth sx={{ mx: 1, my: 2 }} required name="image_url" label="Image Url" variant="outlined" />
-        <FormControl sx={{ width: 250, mx: 1, my: 2 }}>
+        <FormControl sx={{ width:{lg:250,md:250,sm:250,xs:150}, mx: 1, my: 2 }}>
           <InputLabel id="demo-simple-select-label">Category</InputLabel>
           <Select labelId="demo-simple-select-label" id="demo-simple-select" value={category} label="Age" onChange={handleChange}>
             <MenuItem value="Articles">Articles</MenuItem>
