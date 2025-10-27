@@ -37,6 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/all-blogs",
         element: <AllBlogs />,
+        loader:()=>fetch(`${import.meta.env.VITE_API_URL}/blogs`)
       },
       {
         path: "/featured-blogs",

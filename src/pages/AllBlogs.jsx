@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   Box,
   Button,
@@ -15,9 +16,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useEffect, useState } from "react";
 import { axiosCommon } from "../hooks/useAxiosCommon";
 import BlogCards from "../components/home/BlogCards";
+import { useLoaderData } from "react-router";
 const AllBlogs = () => {
   // eslint-disable-next-line no-unused-vars
   const [itemsPerPage, setItemsPerPage] = useState(4);
+  const totalData =useLoaderData();
   const [currentPage, setCurrentPage] = useState(1);
   const [blogs, setBlogs] = useState([]);
   const [filter, setFilter] = useState("");
@@ -28,7 +31,7 @@ const AllBlogs = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axiosCommon(`/all-blogs?page=${currentPage}&size=${itemsPerPage}&filter=${filter}&search=${search}`);
-      // console.log(data);
+      console.log(data.length);
       setBlogs(data);
     };
     getData();
@@ -36,11 +39,11 @@ const AllBlogs = () => {
   useEffect(() => {
     const getCount = async () => {
       const { data } = await axiosCommon(`/blogs-count?filter=${filter}&search=${search}`);
+      console.log(data.count);
       setCount(data.count);
     };
     getCount();
   }, [filter, search]);
-  // console.log(count);
   // handle Search
   const handleSearch = (e) => {
     e.preventDefault();
@@ -53,7 +56,7 @@ const AllBlogs = () => {
     setSearch("");
     setSearchText("");
   };
-  const numberOfPages = Math.ceil(count / itemsPerPage);
+  const numberOfPages = Math.ceil(totalData.length / itemsPerPage);
   const pages = [...Array(numberOfPages).keys()].map((element) => element + 1);
   console.log(pages);
 
@@ -110,17 +113,17 @@ const AllBlogs = () => {
           </Button>
         </Grid>
       </Grid>
-      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", mx: 2, py: 6 }}>
+      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", mx:"auto", py: 6 }}>
         {blogs.map((blog) => (
           <BlogCards key={blog._id} blog={blog}></BlogCards>
         ))}
       </Box>
-      <Box sx={{ width: { lg: 1 / 3 }, mx: "auto" }}>
+      <Box sx={{ width: { lg: 1 / 5,md: 1/5,sm:1/2,xs:3/3 }, mx: {lg:"auto",md:"auto",sm:"auto",xs:3} }}>
         <Stack spacing={2} textAlign={"center"}>
           <Pagination
-            count={blogs.length}
+            count={numberOfPages}
             page={currentPage}
-            onChange={(e, value) => setCurrentPage(value)}
+            onChange={(e,value) => setCurrentPage(value)}
             size="large"
             variant="outlined"
             color="primary"
