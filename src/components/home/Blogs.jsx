@@ -9,7 +9,7 @@ const Blogs = () => {
     queryKey: ["blogs"],
     queryFn: async () => {
       const { data } = await axiosCommon.get(`/blogs`);
-      console.log(data);
+      // console.log(data);
       return data;
     },
   });

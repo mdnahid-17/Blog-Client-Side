@@ -79,7 +79,9 @@ const BlogCards = ({ blog }) => {
                 </Typography>
               </CardContent>
               <CardActions sx={{ py: 3 }}>
-                <Link to={`/blog/${blog._id}`}>
+                <Link to={`/blog/${blog._id}`}
+                >
+                
                   <Button variant="contained">Details</Button>
                 </Link>
 

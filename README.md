@@ -1,16 +1,55 @@
-# React + Vite
+# Client Application (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, scalable frontend application built with **React 19** and **Vite**, designed for real-world use cases such as **Admin Dashboards, SaaS Platforms, Management Systems, and Business Applications**.
 
-Currently, two official plugins are available:
+This project combines **Material UI**, **Tailwind CSS**, and **Framer Motion** to deliver a fast, responsive, and visually rich user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ⚛️ Core
+- **React 19**
+- **Vite**
+- **JavaScript (ES Modules)**
 
-## Expanding the ESLint configuration
+### 🧭 Routing & Data Handling
+- **React Router v7**
+- **TanStack React Query**
+- **Axios**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎨 UI & Styling
+- **Material UI (MUI v7)**
+- **MUI Data Grid**
+- **Tailwind CSS**
+- **Styled Components**
+- **Emotion (CSS-in-JS)**
+
+### 🎞 Animations & UX
+- **Framer Motion**
+- **Typewriter Effect**
+- **SweetAlert2**
+
+### 📝 Forms & State
+- **React Hook Form**
+
+### 🔐 Authentication
+- **Firebase Authentication**
+
+---
+
+## ✨ Key Features
+
+- 🔐 Secure user authentication (Firebase)
+- 📊 Advanced data tables using MUI DataGrid
+- ⚡ Optimized server state management with React Query
+- 🎨 Hybrid styling (MUI + Tailwind + Styled Components)
+- 🧩 Modular & reusable component architecture
+- 🧠 Smooth animations with Framer Motion
+- 📝 Powerful form handling & validation
+- 📱 Fully responsive (mobile-first design)
+- 🚀 Fast builds & hot reload with Vite
+
+---
+
+

@@ -31,7 +31,6 @@ const AllBlogs = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axiosCommon(`/all-blogs?page=${currentPage}&size=${itemsPerPage}&filter=${filter}&search=${search}`);
-      console.log(data.length);
       setBlogs(data);
     };
     getData();
@@ -39,11 +38,11 @@ const AllBlogs = () => {
   useEffect(() => {
     const getCount = async () => {
       const { data } = await axiosCommon(`/blogs-count?filter=${filter}&search=${search}`);
-      console.log(data.count);
       setCount(data.count);
     };
     getCount();
   }, [filter, search]);
+
   // handle Search
   const handleSearch = (e) => {
     e.preventDefault();
@@ -58,7 +57,6 @@ const AllBlogs = () => {
   };
   const numberOfPages = Math.ceil(totalData.length / itemsPerPage);
   const pages = [...Array(numberOfPages).keys()].map((element) => element + 1);
-  console.log(pages);
 
   return (
     <Box sx={{ position: "relative", py: 6 }}>
@@ -74,6 +72,7 @@ const AllBlogs = () => {
                 id="demo-simple-select"
                 onChange={(e) => {
                   setFilter(e.target.value);
+                  setCurrentPage(1)
                 }}
                 value={filter}
                 label="Filter"
